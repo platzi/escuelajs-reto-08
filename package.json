@@ -12,8 +12,8 @@
     "url": "git+https://github.com/platzi/escuelajs-reto-08.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Oscar Barajas <oscar@platzi.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/platzi/escuelajs-reto-08/issues"
   },
