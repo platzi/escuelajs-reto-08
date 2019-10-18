@@ -34,11 +34,6 @@ npm run start
 2) Crea la estructura necesaria para manejar distintas rutas en Express.
 3) Muestra correctamente en tu servidor de express los productos de Platzi Store.
 
-### Cuarto Problema (Opcional)
-
-1) Añade la configuración para tener un entorno de desarrollo y otro para producción.
-2) Muestra un error 404 cuando una ruta no exista.
-3) Publica tu API
 
 ### Enviar solución de reto
 Debes de crear un "Fork" de este proyecto, revolver los problemas y crear un Pull Request hacia este repositorio.
