@@ -4,7 +4,7 @@ const express = require("express"),
 
 function routes(app) {
   const router = express.Router();
-  app.use('/', router);
+  app.use("/", router);
 
   router.get("", (req, res) => {
     let userInfo = req.header("user-agent");
