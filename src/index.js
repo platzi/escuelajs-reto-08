@@ -1,7 +1,10 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require("express"),
   path = require("path"),
   app = express(),
   port = process.env.PORT || 3000;
+console.log(`El servidor está corriendo en el puerto: ${process.env.PORT}`);
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
