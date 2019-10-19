@@ -3,6 +3,7 @@ const express = require("express"),
   path = require("path"),
   app = express(),
   port = process.env.PORT || 3000;
+const product = require('./routes/products');
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
@@ -14,10 +15,7 @@ app.get('/receipts', (req, res) => {
   res.sendFile(file);
 });
 
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+product(app);
 
 app.listen(port, err => {
   if (err) {
