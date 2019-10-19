@@ -1,7 +1,8 @@
 const express = require("express"),
   path = require("path"),
-  app = express(),
-  port = process.env.PORT || 3000;
+  app = express();
+
+const { config } = require('./config/index');
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
@@ -18,10 +19,10 @@ app.get('/products', (req, res) => {
   res.json(storeProducts);
 });
 
-app.listen(port, err => {
+app.listen(config.port, err => {
   if (err) {
     console.error("Error: ", err);
     return;
   }
-  console.log(`Listening http://localhost:${port}`);
+  console.log(`Listening http://localhost:${config.port}`);
 });
