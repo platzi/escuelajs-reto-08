@@ -1,9 +1,9 @@
 const express = require("express"),
   app = express(),
   { config } = require("./config"),
-  javascriptSchool = require("./routes");
+  routes = require("./routes");
 
-javascriptSchool(app);
+routes(app);
 
 app.listen(config.port, err => {
   if (err) {

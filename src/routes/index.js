@@ -2,7 +2,7 @@ const express = require("express"),
   path = require("path"),
   { products } = require("../utils/mocks/storeProducts");
 
-function javascriptSchool(app) {
+function routes(app) {
   const router = express.Router();
   app.use('/', router);
 
