@@ -1,16 +1,20 @@
+require('dotenv').config();
+
 const express = require("express"),
   path = require("path"),
   app = express(),
   port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  let userInfo = req.header("user-agent");
-  res.send(`UserInfo: ${userInfo}`);
-});
+app.use(express.static('public'));
+
+
+// app.get('/', (req, res) => {
+//    res.sendFile("./index.html")
+// });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, "assets/receipt.pdf");
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
