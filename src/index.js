@@ -3,19 +3,30 @@ const express = require("express"),
   app = express(),
   port = process.env.PORT || 3000;
 
+require('dotenv').config();
+const products = require('./mocks/products.json');
+const users = require('./mocks/users.json')
+
+
+console.log(process.env.DB_HOST)
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
   res.send(`UserInfo: ${userInfo}`);
 });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, "assets/receipt.pdf");
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
+  let storeProducts = products;
   res.json(storeProducts);
+});
+
+app.get('/users', (req, res) => {
+  let storeUsers = users;
+  res.json(storeUsers);
 });
 
 app.listen(port, err => {
