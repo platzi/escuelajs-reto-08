@@ -1,22 +1,18 @@
-const express = require("express"),
-  path = require("path"),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require("express")
+const app = express()
+const { config } = require('../config')
+const { port } = config
+const productsApi = require('./routes/product')
+const receiptsApi = require('./routes/receipt')
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
   res.send(`UserInfo: ${userInfo}`);
 });
 
-app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
-});
-
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+// Routes
+productsApi(app)
+receiptsApi(app)
 
 app.listen(port, err => {
   if (err) {
