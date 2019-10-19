@@ -12,8 +12,12 @@ function javascriptSchool(app) {
   });
 
   router.get("/receipts", (req, res) => {
-    let file = path.join(__dirname, "../assets/receipt.pdf");
-    res.sendFile(file);
+    try {
+      let file = path.join(__dirname, "../assets/receipt.pdf");
+      res.sendFile(file);
+    } catch (err) {
+      console.log(new Error(err.message));
+    }
   });
 
   router.get("/products", (req, res) => {
