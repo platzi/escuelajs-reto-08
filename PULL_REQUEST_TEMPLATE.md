@@ -2,11 +2,11 @@
 
 Solución al reto 08 de Escuela de JavaScript
 
-Nombre:
-Usuario Platzi:
+Nombre: Luis Antonio Rodríguez García
+Usuario Platzi:th3_bu6
 
 ## Ciudad
-- [] Ciudad de México
+- [X] Ciudad de México
 - [] Bogotá
 
 ## Reto:
