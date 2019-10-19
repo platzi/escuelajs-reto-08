@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { productMocks } = require('./utils/mocks/products');
 const express = require("express"),
   path = require("path"),
   app = express(),
@@ -14,9 +15,16 @@ app.get('/receipts', (req, res) => {
   res.sendFile(file);
 });
 
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
+app.get('/products', async (req, res, next) => {
+  try {
+    const products = await Promise.resolve(productMocks);
+    res.status(200).json({
+      data: products,
+      message: 'Products listed'
+    });
+  } catch(err) {
+    next(err)
+  }
 });
 
 app.listen(port, err => {
