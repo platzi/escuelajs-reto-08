@@ -1,7 +1,9 @@
-const express = require("express"),
-  path = require("path"),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require("express");
+const path = require("path");
+const configuration = require('./config/dev.js');
+const app = express();
+
+const port = configuration.port;
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
