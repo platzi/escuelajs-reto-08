@@ -5,6 +5,10 @@ const express = require("express"),
 require('dotenv').config();
 const port = process.env.PORT || 3000;
 
+const productsApi = require('./routes/products.js');
+
+productsApi(app);
+
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
   res.send(`UserInfo: ${userInfo}`);
@@ -15,11 +19,6 @@ app.get('/receipts', (req, res) => {
   res.sendFile(file);
 });
 
-app.get('/products', (req, res) => {
-  let storeProducts = require('./mock_data.json');
-  res.json(storeProducts);
-});
-
 app.listen(port, err => {
   if (err) {
     console.error("Error: ", err);
@@ -27,3 +26,4 @@ app.listen(port, err => {
   }
   console.log(`Listening http://localhost:${port}`);
 });
+
