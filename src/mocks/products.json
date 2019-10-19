@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "image": "https://arepa.s3.amazonaws.com/camiseta.png",
+        "title": "Camiseta",
+        "price": 25,
+        "description": "Camiseta color negro"
+      },
+      {
+        "id": "2",
+        "image": "https://arepa.s3.amazonaws.com/stickers2.png",
+        "title": "Stikers Especiales",
+        "price": 15,
+        "description": "Stikers conmemorativos edición especial"
+      },
+      {
+        "id": "3",
+        "image": "https://arepa.s3.amazonaws.com/stickers1.png",
+        "title": "Stikers",
+        "price": 5,
+        "description": "Stikers Cool"
+      },
+      {
+        "id": "4",
+        "image": "https://arepa.s3.amazonaws.com/camiseta.png",
+        "title": "Camiseta Blanca",
+        "price": 25,
+        "description": "Camiseta color blanco"
+      }
+]
