@@ -12,5 +12,5 @@ Usuario Platzi:th3_bu6
 ## Reto:
   - [X] Primer problema
   - [X] Segundo problema
-  - [] Tercer problema
-  - [] Cuarto Problema (Opcional)
+  - [X] Tercer problema
+  
