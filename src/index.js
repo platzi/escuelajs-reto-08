@@ -23,7 +23,8 @@ app.get('/products', async (req, res, next) => {
       message: 'get single product'
     })
   } catch (error) {
-    next(err)
+    res.status(500).send('Error!')
+    throw new Error(error)
   }
 });
 
@@ -39,7 +40,8 @@ app.get('/products/:id', async (req, res, next) => {
       message: 'get single product'
     })
   } catch (error) {
-    next(err)
+    res.status(500).send('Error!')
+    throw new Error(error)
   }
 });
 
@@ -56,7 +58,8 @@ app.delete('/products/:id', async (req, res, next) => {
       message: 'product deleted'
     })
   } catch (error) {
-    next(err)
+    res.status(500).send('Error!')
+    throw new Error(error)
   }
 });
 
@@ -72,7 +75,8 @@ app.patch('/products/:id', async (req, res, next) => {
       message: 'product updated'
     })
   } catch (error) {
-    next(err)
+    res.status(500).send('Error!')
+    throw new Error(error)
   }
 });
 
@@ -86,7 +90,8 @@ app.post('/products', async (req, res, next) => {
       message: 'product created'
     })
   } catch (error) {
-    next(err)
+    res.status(500).send('Error!')
+    throw new Error(error)
   }
 });
 
