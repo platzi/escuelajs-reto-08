@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/receipts', (req, res) => {
-  const file = path.join(__dirname, 'asset/receipt.pdf');
-  res.sendFile();
+  const file = path.join(__dirname, 'assets/receipt.pdf');
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
