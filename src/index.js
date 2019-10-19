@@ -1,7 +1,9 @@
-const express = require("express"),
-  path = require("path"),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require("express");
+const { config } = require('./config/index.js');
+const  path = require("path");
+ const app = express();
+
+const productsApi = require('./utils/mocks/products');
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
@@ -9,19 +11,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, "assets/receipt.pdf");
+  res.sendFile(file,'', (err) => {
+    if (err) {
+      next(err)
+    } else {
+      console.log('File Sent:', file)
+    }
+  });
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
+  res.json(productsApi);
 });
 
-app.listen(port, err => {
-  if (err) {
-    console.error("Error: ", err);
-    return;
-  }
-  console.log(`Listening http://localhost:${port}`);
+app.listen(config.port, function() {
+  console.log(`Listening http://localhost:${config.port}`);
 });
