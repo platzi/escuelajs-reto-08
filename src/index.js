@@ -1,3 +1,5 @@
+const { store } = require('./Mocks/products');
+
 const express = require("express"),
   path = require("path"),
   app = express(),
@@ -14,8 +16,7 @@ app.get('/receipts', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
+  res.json(store);
 });
 
 app.listen(port, err => {
