@@ -10,7 +10,7 @@ Usuario Platzi:th3_bu6
 - [] Bogotá
 
 ## Reto:
-  - [] Primer problema
-  - [] Segundo problema
+  - [X] Primer problema
+  - [X] Segundo problema
   - [] Tercer problema
   - [] Cuarto Problema (Opcional)
