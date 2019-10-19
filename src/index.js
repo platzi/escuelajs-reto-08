@@ -1,27 +1,20 @@
+const { config } = require('./config/index')
 const express = require("express"),
   path = require("path"),
   app = express(),
-  port = process.env.PORT || 3000;
+  port = config.port || 5000;
 
-app.get('/', (req, res) => {
-  let userInfo = req.header("user-agent");
-  res.send(`UserInfo: ${userInfo}`);
-});
+const productsApi = require('../routes/products.js')
 
-app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
-});
-
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+//Routes
+productsApi(app)
 
 app.listen(port, err => {
   if (err) {
     console.error("Error: ", err);
     return;
   }
-  console.log(`Listening http://localhost:${port}`);
+  const debug = require('debug')('app:server');
+  debug(`Listening http://localhost:${config.port}`)
+  //console.log(`Listening http://localhost:${port}`);
 });
