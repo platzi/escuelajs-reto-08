@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "watch": "nodemon src/index.js"
+    "watch": "nodemon src/index.js",
+    "server": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/platzi/escuelajs-reto-08#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "node-env-file": "^0.1.8",
     "nodemon": "^1.19.4"
