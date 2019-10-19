@@ -15,6 +15,16 @@ npm install
 npm run start
 ```
 
+### Paquetes
+
+Los paquetes instalados son los siguientes:
+1. [nodemon](https://www.npmjs.com/package/nodemon)
+2. [dotenv](https://www.npmjs.com/package/dotenv) 
+
+### Variables de entorno
+
+Es necesario crear el archivo .env con los valores del archivo .env.example y llenar los valores necesarios. Esto con el fin de poder tener una aplicación con valores de entorno distintos para cada tipo de entorno de desarrollo.
+
 ## RETO
 
 ### Primer problema
