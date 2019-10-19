@@ -26,7 +26,7 @@ function productsApi(app) {
     const { productId } = req.params;
 
     try {
-      const products = await productsService.getMovie({ productId });
+      const products = await productsService.getProduct({ productId });
 
       res.status(200).json({
         data: products,
@@ -40,7 +40,7 @@ function productsApi(app) {
   router.post('/', async function(req, res, next) {
     const { body: product } = req;
     try {
-      const createdproductId = await productsService.createMovie({ product });
+      const createdproductId = await productsService.createProduct({ product });
 
       res.status(201).json({
         data: createdproductId,
@@ -56,9 +56,9 @@ function productsApi(app) {
     const { body: product } = req;
 
     try {
-      const updatedproductId = await productsService.updateMovie({
+      const updatedproductId = await productsService.updateProduct({
         productId,
-        movie
+        product
       });
 
       res.status(200).json({
@@ -74,7 +74,7 @@ function productsApi(app) {
     const { productId } = req.params;
 
     try {
-      const deletedproductId = await productsService.deleteMovie({ productId });
+      const deletedproductId = await productsService.deleteProduct({ productId });
 
       res.status(200).json({
         data: deletedproductId,

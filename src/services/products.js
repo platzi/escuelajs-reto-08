@@ -6,24 +6,24 @@ class ProductsService {
     return products || [];
   }
 
-  async getMovie() {
-    const movie = await Promise.resolve(productsMock[0]);
-    return movie || {};
+  async getProduct() {
+    const product = await Promise.resolve(productsMock[0]);
+    return product || {};
   }
 
-  async createMovie() {
-    const createMovieId = await Promise.resolve(productsMock[0].id);
-    return createMovieId;
+  async createProduct() {
+    const createProductId = await Promise.resolve(productsMock[0].id);
+    return createProductId;
   }
 
-  async updateMovie() {
-    const updatedMovieId = await Promise.resolve(productsMock[0].id);
-    return updatedMovieId;
+  async updateProduct() {
+    const updatedProductId = await Promise.resolve(productsMock[0].id);
+    return updatedProductId;
   }
 
-  async deleteMovie() {
-    const deletedMovieId = await Promise.resolve(productsMock[0].id);
-    return deletedMovieId;
+  async deleteProduct() {
+    const deletedProductId = await Promise.resolve(productsMock[0].id);
+    return deletedProductId;
   }
 }
 
