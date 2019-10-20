@@ -3,7 +3,8 @@ require('dotenv').config()
 const express = require("express"),
   path = require("path"),
   app = express(),
-  port = process.env.PORT;
+  port = process.env.PORT,
+  storeProducts = require('./mocks/products'); 
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
@@ -16,8 +17,11 @@ app.get('/receipts', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
+  //let storeProducts = '';
+  res.status(200).json({
+    data: storeProducts,
+    message: 'Se listaron los productos'
+  });
 });
 
 app.listen(port, err => {
