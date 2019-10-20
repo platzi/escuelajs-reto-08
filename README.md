@@ -15,6 +15,12 @@ npm install
 npm run start
 ```
 
+### Modo Desarrollo
+Para ejecutar el proceso en modo de desarrollo y el modo nodemon (paquete que nos ayuda a ve los cambios realizados en el proyecto en modo real)
+```
+npm run watch
+```
+
 ## RETO
 
 ### Primer problema
