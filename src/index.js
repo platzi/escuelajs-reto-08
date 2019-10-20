@@ -1,7 +1,10 @@
+require('dotenv').config()
+
 const express = require("express"),
   path = require("path"),
   app = express(),
-  port = process.env.PORT || 3000;
+  port = process.env.PORT,
+  storeProducts = require('./mocks/products'); 
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
@@ -9,13 +12,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, "assets/receipt.pdf");
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
+  //let storeProducts = '';
+  res.status(200).json({
+    data: storeProducts,
+    message: 'Se listaron los productos'
+  });
 });
 
 app.listen(port, err => {
