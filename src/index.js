@@ -1,22 +1,11 @@
-const express = require("express"),
-  path = require("path"),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require("express");
+const { config } = require('./config/index');
+const platziStoreApi = require('./routes/platziStore');
 
-app.get('/', (req, res) => {
-  let userInfo = req.header("user-agent");
-  res.send(`UserInfo: ${userInfo}`);
-});
+const port = config.port;
+const app = express();
 
-app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
-});
-
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+platziStoreApi(app);
 
 app.listen(port, err => {
   if (err) {
@@ -24,4 +13,5 @@ app.listen(port, err => {
     return;
   }
   console.log(`Listening http://localhost:${port}`);
+  console.log(`PlatziStore API http://localhost:${port}/api/platzistore`)
 });
