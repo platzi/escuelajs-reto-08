@@ -11,11 +11,14 @@ npm install
 ```
 
 ### Ejecución
+Para utlizar el archivo .env con las variables para la ejecución del proyecto es necesario crearlo tomando como base el archivo **.env.example** _(Este archivo no se sube al repositorio por seguridad ya que en este archivo se guardan la información de credenciales de base de datos.)_
+
+#### Producción
 ```
 npm run start
 ```
 
-### Modo Desarrollo
+#### Modo Desarrollo
 Para ejecutar el proceso en modo de desarrollo y el modo nodemon (paquete que nos ayuda a ve los cambios realizados en el proyecto en modo real)
 ```
 npm run watch
