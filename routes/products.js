@@ -1,15 +1,18 @@
 const express = require('express');
 const path = require('path');
-const { productsMock } = require('../utils/mocks/products');
+const ProductsService = require('../services/products');
 
 function productsApi(app) {
   const router = express.Router();
   app.use('/api/products', router);
 
-  router.get('/', async function(req, res, next) {
-    try {
-      const products = await Promise.resolve(productsMock);
+  const productsService = new ProductsService();
 
+  router.get('/', async function(req, res, next) {
+    const { tags } = req.query;
+
+    try {
+      const products = await productsService.getProducts({ tags });
       res.status(200).json({
         data: products,
         message: 'products listed'
@@ -19,9 +22,13 @@ function productsApi(app) {
     }
   });
 
-  router.get('/receipts', (req, res) => {
-    const file = path.join(__dirname, 'assets/receipt.pdf');
-    res.sendFile(file);
+  router.get('/receipts', async function(req, res, next) {
+    try {
+      const file = path.join(__dirname, 'assets/receipt.pdf');
+      res.sendFile(file);
+    } catch (err) {
+      next(err);
+    }
   });
 }
 
