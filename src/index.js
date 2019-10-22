@@ -1,7 +1,9 @@
 const express = require("express"),
+  dotenv = require("dotenv").config(),
   path = require("path"),
   app = express(),
-  port = process.env.PORT || 3000;
+  port = process.env.PORT || 3000
+  productsApi = require("./routes/products.js");
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
@@ -9,14 +11,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, "assets/receipt.pdf");
+  res.sendFile(file);
 });
 
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+productsApi(app);
 
 app.listen(port, err => {
   if (err) {
