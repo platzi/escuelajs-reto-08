@@ -1,16 +1,17 @@
-const express = require("express"),
-  path = require("path"),
-  app = express(),
-  port = process.env.PORT || 3000;
+const express = require('express');
+const path = require('path');
+const { config } = require('../config/index');
+const app = express();
+//port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  let userInfo = req.header("user-agent");
+  let userInfo = req.header('user-agent');
   res.send(`UserInfo: ${userInfo}`);
 });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, 'assets/receipt.pdf');
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
@@ -18,10 +19,10 @@ app.get('/products', (req, res) => {
   res.json(storeProducts);
 });
 
-app.listen(port, err => {
+app.listen(config.port, err => {
   if (err) {
-    console.error("Error: ", err);
+    console.error('Error: ', err);
     return;
   }
-  console.log(`Listening http://localhost:${port}`);
+  console.log(`Listening http://localhost:${config.port}`);
 });
