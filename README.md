@@ -1,4 +1,5 @@
 # escuelajs-reto-08
+
 Reto 8 Octubre 19: Curso de Backend con Node
 
 ## Platzi Store Backend
@@ -6,12 +7,14 @@ Reto 8 Octubre 19: Curso de Backend con Node
 Ahora que tenemos Platzi Store funcionando, debemos crear el Backend que necesita nuestra aplicación, por lo tanto es necesario que terminemos las tareas faltantes.
 
 ### Instalación
-```
+
+```bash
 npm install
 ```
 
 ### Ejecución
-```
+
+```bash
 npm run start
 ```
 
@@ -34,12 +37,16 @@ npm run start
 2) Crea la estructura necesaria para manejar distintas rutas en Express.
 3) Muestra correctamente en tu servidor de express los productos de Platzi Store.
 
+- Se agrega el método para buscar productos por su `id`. La petición sería: `http://localhost:port/products/:id`
 
 ### Enviar solución de reto
+
 Debes de crear un "Fork" de este proyecto, revolver los problemas y crear un Pull Request hacia este repositorio.
 
 ### Contribuir
+
 Si alguien quiere agregar o mejorar algo, lo invito a colaborar directamente en este repositorio: [escuelajs-reto-08](https://github.com/platzi/escuelajs-reto-08/)
 
 ### Licencia
+
 escuelajs-reto-06 se lanza bajo la licencia [MIT](https://opensource.org/licenses/MIT).
