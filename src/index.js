@@ -1,7 +1,10 @@
 const express = require("express"),
   path = require("path"),
   app = express(),
-  { config } = require('./config/index');
+  { config } = require('./config/index'),
+  storeApi = require('../src/routes/store');
+
+storeApi(app);
 
 app.get('/', (req, res) => {
   let userInfo = req.header("user-agent");
