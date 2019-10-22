@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const { config } = require('../config/index');
 const app = express();
-//port = process.env.PORT || 3000;
+const productsApi = require('./routes/products.js');
 
 app.get('/', (req, res) => {
   let userInfo = req.header('user-agent');
@@ -14,10 +14,8 @@ app.get('/receipts', (req, res) => {
   res.sendFile(file);
 });
 
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+// Platzi products using express Router
+productsApi(app);
 
 app.listen(config.port, err => {
   if (err) {
