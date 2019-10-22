@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const { config } = require('./config/index');
+const products = require('./assets/mocks/products');
 
 const app = express();
 //const { port } = config;
+
 
 console.log(config.port);
 app.get('/', (req, res) => {
@@ -17,8 +19,42 @@ app.get('/receipts', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
+  res.status(200).json({
+    data: products,
+    message: "Product listed"
+    });
+});
+
+app.get('/products/:id', (req, res) => {
+  let id  = products[0].id;
+  res.status(200).json({
+    data: products[0],
+    message: `product ${id} listed`
+    });
+});
+
+app.post('/products', (req, res) => {
+  let createProductId  = products[0].id;
+  res.status(201).json({
+    data: products[0],
+    message: `product ${createProductId} created`
+    });
+});
+
+app.put('/products/:id', (req, res) => {
+  let updateProduct  = products[0].id;
+  res.status(200).json({
+    data: updateProduct,
+    message: `product ${updateProduct} updated`
+    });
+});
+
+app.delete('/products/:id', (req, res) => {
+  let deletedProduct  = products[0].id;
+  res.status(200).json({
+    data: deletedProduct,
+    message: `product ${deletedProduct} deleted`
+    });
 });
 
 app.listen(config.port, err => {
