@@ -8,9 +8,11 @@ app.get('/', (req, res) => {
   res.send(`UserInfo: ${userInfo}`);
 });
 
+
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  //join une los string de separados por comas
+  let file = path.join(__dirname, 'src','assets','receipt.pdf');
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
