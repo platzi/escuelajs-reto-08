@@ -2,12 +2,12 @@
 
 Solución al reto 08 de Escuela de JavaScript
 
-Nombre:
-Usuario Platzi:
+Nombre: cesar galindo
+Usuario Platzi: csgalindos@hotmail.com
 
 ## Ciudad
 - [] Ciudad de México
-- [] Bogotá
+- [x] Bogotá
 
 ## Reto:
   - [] Primer problema
