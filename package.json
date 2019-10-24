@@ -4,8 +4,8 @@
   "description": "Reto 8 Octubre 19: Curso de Backend con Node",
   "main": "index.js",
   "scripts": {
-    "watch": "set DEBUG=app:*&& nodemon --watch src/index.js",
-    "start": "NODE_ENV=production node src/index.js"
+    "start": "node src/index.js",
+    "watch": "nodemon --watch src src/index.js"
   },
   "repository": {
     "type": "git",
