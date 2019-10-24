@@ -4,23 +4,16 @@ const express = require("express"),
   app = express(),
   port = process.env.PORT || 3000;
 
+  const productsApi = require('../routes/index.js');
 
-console.log(`Your port is ${process.env.PORT}`);
+  productsApi(app);
 
   app.get('/', (req, res) => {
-  let userInfo = req.header("user-agent");
-  res.send(`UserInfo: ${userInfo}`);
-});
+    let userInfo = req.header("user-agent");
+    res.send(`UserInfo: ${userInfo}`);
+  });
 
-app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "assets/receipt.pdf");
-  res.sendFile(file);
-});
-
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+console.log(`Your port is ${process.env.PORT}`);
 
 app.listen(port, err => {
   if (err) {
