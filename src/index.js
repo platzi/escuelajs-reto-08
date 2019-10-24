@@ -13,8 +13,8 @@ console.log(`Your port is ${process.env.PORT}`);
 });
 
 app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
+  let file = path.join(__dirname, "assets/receipt.pdf");
+  res.sendFile(file);
 });
 
 app.get('/products', (req, res) => {
