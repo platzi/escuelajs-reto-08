@@ -1,22 +1,19 @@
+require('dotenv').config();
 const express = require("express"),
   path = require("path"),
   app = express(),
   port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  let userInfo = req.header("user-agent");
-  res.send(`UserInfo: ${userInfo}`);
-});
+  const productsApi = require('../routes/index.js');
 
-app.get('/receipts', (req, res) => {
-  let file = path.join(__dirname, "asset/receipt.pdf");
-  res.sendFile();
-});
+  productsApi(app);
 
-app.get('/products', (req, res) => {
-  let storeProducts = '';
-  res.json(storeProducts);
-});
+  app.get('/', (req, res) => {
+    let userInfo = req.header("user-agent");
+    res.send(`UserInfo: ${userInfo}`);
+  });
+
+console.log(`Your port is ${process.env.PORT}`);
 
 app.listen(port, err => {
   if (err) {
@@ -25,3 +22,4 @@ app.listen(port, err => {
   }
   console.log(`Listening http://localhost:${port}`);
 });
+
