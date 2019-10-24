@@ -1,7 +1,8 @@
 const express = require("express"),
   path = require("path"),
   app = express(),
-  { config } = require("./config/index");
+  { config } = require("./config/index"),
+  { platziStore } = require("./utils/mocks/platziStore"),
   port = config.port || 3000;
 
 app.get('/', (req, res) => {
@@ -15,7 +16,7 @@ app.get('/receipts', (req, res) => {
 });
 
 app.get('/products', (req, res) => {
-  let storeProducts = '';
+  let storeProducts = platziStore;
   res.json(storeProducts);
 });
 
