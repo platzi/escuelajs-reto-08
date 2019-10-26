@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "dev": "DEBUG=app* nodemon index",
+    "watch": "nodemon src/index"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,10 @@
   },
   "homepage": "https://github.com/platzi/escuelajs-reto-08#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }
