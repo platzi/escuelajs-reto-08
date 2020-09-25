@@ -28,15 +28,20 @@ npm run start
 1) Revisa detenidamente el código de 'receipts' para encontrar los posibles errores.
 2) Asegura que el archivo PDF es mostrado en el navegador.
 
+![P1](./screenshots/c1.JPG)
+
 ### Tercer Problema
 
 1) Construye un Mock de la información de los productos de Platzi Store.
 2) Crea la estructura necesaria para manejar distintas rutas en Express.
 3) Muestra correctamente en tu servidor de express los productos de Platzi Store.
 
+![P2](./screenshots/c2.JPG)
 
 ### Enviar solución de reto
 Debes de crear un "Fork" de este proyecto, revolver los problemas y crear un Pull Request hacia este repositorio.
+
+![P3](./screenshots/c3.JPG)
 
 ### Contribuir
 Si alguien quiere agregar o mejorar algo, lo invito a colaborar directamente en este repositorio: [escuelajs-reto-08](https://github.com/platzi/escuelajs-reto-08/)
